@@ -21,7 +21,8 @@ Built with React, Node.js, MongoDB, and D3.js.
 
 | JSON Preview | Tree View |
 |--------------|-----------|
-![Screenshot 2025-06-28 152156](https://github.com/user-attachments/assets/ea83f03d-435b-454d-813e-bb72c707fd13)
+![Screenshot 2025-06-28 152156](https://github.com/user-attachments/assets/c7a8fddf-0802-4899-b1ce-8f9210c59dbe)
+|![Screenshot 2025-06-28 152156](https://github.com/user-attachments/assets/ea83f03d-435b-454d-813e-bb72c707fd13)|
 
 ---
 
