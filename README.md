@@ -32,7 +32,7 @@ Built with React, Node.js, MongoDB, and D3.js.
 | Layer      | Tech |
 |------------|------|
 | Frontend   | React, TailwindCSS, D3.js |
-| Backend    | Node.js, Express.js |
+| Backend    | Express.js |
 | Auth       | JWT or session-based |
 | Database   | MongoDB (Auth, History), MySQL (Query Execution) |
 | Utilities  | concurrently, dotenv |
