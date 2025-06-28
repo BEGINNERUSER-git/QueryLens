@@ -1,7 +1,7 @@
 # 🔍 QueryLens — MySQL Execution Plan Visualizer
 
 *QueryLens* is a full-stack web app that helps SQL developers visualize and understand MySQL query execution plans using EXPLAIN .  
-Built with React, Node.js, MongoDB, and D3.js.
+Built with React, Express.js, MongoDB, and D3.js.
 
 ---
 
