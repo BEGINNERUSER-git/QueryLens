@@ -46,6 +46,13 @@ router.post(
         email: req.body.email,
         password: secPass,
       });
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      const token = jwt.sign(payload, process.env.JWT_SECRET);
       success = true;
       return res.status(200).json({ success, errors: result.array() });
     } catch (error) {

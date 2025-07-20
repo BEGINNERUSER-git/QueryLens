@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Alert from "./Alert";
+
 
 export default function Login() {
   const [data, setData] = useState({ email: "", password: "" });
+  const [error, setError] = useState(null);
+
   let Navigate=useNavigate();
   const handleOnSubmit = async (e) => {
     e.preventDefault();
@@ -21,16 +25,26 @@ export default function Login() {
     Navigate("/home");
    
     }
-    else{
-        console.log("Wrong Credentials");
-        
-    }
+    else if (Array.isArray(json.errors)) {
+  const messages = json.errors.map(err => `${err.path}: ${err.msg}`).join('\n');
+  setError(messages);
+} else {
+  setError("Login failed. Please try again.");
+}
   };
   const handleOnChange = (e) => {
     setData({ ...data,[e.target.name]: e.target.value });
   };
   return (
     <>
+        <div className="conatiner">
+          {error && (
+                <div className="mt-4 max-w-xl mx-auto">
+                  <Alert type="error" message={error} />
+                </div>
+              )}
+              </div>
+
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
