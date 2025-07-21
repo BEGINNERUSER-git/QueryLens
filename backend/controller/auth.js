@@ -46,8 +46,15 @@ router.post(
         email: req.body.email,
         password: secPass,
       });
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      const token = jwt.sign(payload, process.env.JWT_SECRET);
       success = true;
-      return res.status(200).json({ success, errors: result.array() });
+      return res.status(200).json({ success});
     } catch (error) {
       console.log(error.message);
     }
@@ -67,7 +74,7 @@ router.post(
     const result = validationResult(req);
 
     if (!result.isEmpty()) {
-      return res.status(400).json({ success, errors: result.array() });
+      return res.status(400).json({ success });
     }
 
     const { email, password } = req.body;
@@ -87,7 +94,7 @@ router.post(
 
       const token = jwt.sign(payload, process.env.JWT_SECRET);
       success = true;
-      return res.status(200).json({ success, errors: result.array(),token });
+      return res.status(200).json({ success,token });
     } catch (error) {
       console.log(error.message);
       res.status(500).json({errors:result.array()});

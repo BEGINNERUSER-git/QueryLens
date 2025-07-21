@@ -19,9 +19,9 @@ export default function SignUp(props) {
 
     })
     const json=await res.json();
-    console.log(json);
+    // console.log(json);
     if(json.success){
-    sessionStorage.setItem('token: ',json.token);
+    sessionStorage.setItem("token: ",json.token);
      Navigate(`/home`);
     }
    else if (Array.isArray(json.errors)) {
@@ -48,7 +48,7 @@ export default function SignUp(props) {
         
         <div className="border-b border-gray-900/10 pb-12">
         <div className="container text-center my-2">
-          <h2 className="text-base/7 font-large text-gray-900">Register</h2>
+          <h2 className="text-base/7 font-large text-gray-100">Register</h2>
         </div>
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
