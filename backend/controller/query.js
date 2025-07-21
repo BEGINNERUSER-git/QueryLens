@@ -32,8 +32,7 @@ router.post("/explain",fetch_user,async (req,res)=>{
     const userId=req.user.id;
     
     const DBconfig=getDBconfig(userId);
-    // console.log(DBconfig);
-    // console.log(userId);
+   
     if(!DBconfig) return res.status(400).json({success:false,message:"MySQL not connected"});
     try {
         const conn=await mysql.createConnection(DBconfig);

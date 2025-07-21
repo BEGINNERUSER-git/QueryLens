@@ -19,7 +19,6 @@ export default function Login() {
       body: JSON.stringify({ email, password }),
     });
     const json = await res.json();
-    // console.log(json);
     if(json.success){
     sessionStorage.setItem("token: ",json.token);
     Navigate("/home");
@@ -29,7 +28,6 @@ export default function Login() {
   const messages = json.errors.map(err => `${err.path}: ${err.msg}`).join('\n');
   setError(messages);
 } else {
-  // const messages = json.errors.map(err => `${err.path}: ${err.msg}`).join('\n');
   setError("Login failed. Please try again.");
 }
   };

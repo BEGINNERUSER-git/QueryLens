@@ -19,7 +19,6 @@ export default function SignUp(props) {
 
     })
     const json=await res.json();
-    // console.log(json);
     if(json.success){
     sessionStorage.setItem("token: ",json.token);
      Navigate(`/home`);

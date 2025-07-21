@@ -27,7 +27,6 @@ export default function ConnectDB(props) {
       body: JSON.stringify({ host, user, password, database, port }),
     });
     const json = await res.json();
-    // console.log(json);
     if (json.success) {
       console.log("Connected Db successfully");
       setDbcred({ host: "", user: "", password: "", database: "", port: "" });
